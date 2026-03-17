@@ -1,0 +1,181 @@
+.hero {
+    position: relative;
+    /* height: 80vh; - Removed to prevent fixed height issues */
+    min-height: 80vh;
+    /* Allow growth */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    color: var(--color-surface);
+    padding: var(--spacing-2xl) 0;
+    /* Add vertical padding */
+}
+
+/* Base Aurora Container removed in favor of Vanta.js */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background: radial-gradient(circle at center, transparent 0%, rgba(15, 23, 42, 0.8) 100%);
+    pointer-events: none;
+}
+
+/* Content */
+.content {
+    position: relative;
+    z-index: 20;
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+    padding: 2rem;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.title {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.4;
+    margin-bottom: 2rem;
+    color: white;
+    letter-spacing: -0.02em;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.title ruby {
+    ruby-align: center;
+    ruby-position: over;
+}
+
+.title rt {
+    font-size: 0.28em; /* Slightly smaller for longer ruby text */
+    font-weight: 700;
+    color: #38bdf8;
+    letter-spacing: 0.1em; /* Reduced spacing for Japanese characters */
+    padding-bottom: 0.4em;
+    text-transform: none; /* Removed uppercase for Japanese */
+    text-shadow: 0 0 10px rgba(56, 189, 248, 0.8);
+}
+
+.highlight {
+    background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 15px rgba(56, 189, 248, 0.6));
+    position: relative;
+    display: inline-block;
+}
+
+.highlight::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #38bdf8, transparent);
+    opacity: 0.5;
+}
+
+.description {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: #cbd5e1;
+    /* Slate 300 for readability on dark */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.actions {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+}
+
+/* Animations */
+@keyframes float {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    33% {
+        transform: translate(30px, -50px) scale(1.1);
+    }
+
+    66% {
+        transform: translate(-20px, 20px) scale(0.9);
+    }
+
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+@keyframes twinkle {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 20px 20px;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        min-height: 100vh;
+        /* Full screen on mobile */
+        padding: 4rem 1rem;
+        /* Adjust padding */
+    }
+
+    .content {
+        padding: 1.5rem;
+        /* Reduce padding slightly */
+    }
+
+    .title {
+        font-size: 2.25rem;
+        /* Smaller font for mobile */
+        margin-bottom: 1rem;
+    }
+
+    .description {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+        padding: 0 1rem;
+        /* Ensure text doesn't hit edges */
+    }
+
+    .actions {
+        flex-direction: column;
+        padding: 0;
+        /* Remove horizontal padding that constrained buttons */
+        gap: 1rem;
+        width: 100%;
+        max-width: 320px;
+        /* Limit button width */
+        margin: 0 auto;
+    }
+}
