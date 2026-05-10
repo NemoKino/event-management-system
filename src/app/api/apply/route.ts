@@ -68,7 +68,7 @@ export async function POST(request: Request) {
                 ${JSON.stringify({
                 name: data.organizerName,
                 icon: '/images/organizer-icon.jpg',
-                twitterUrl: `https://x.com/${data.twitterId.replace('@', '')}`
+                twitterUrl: `https://x.com/${data.snsId.replace('@', '')}`
             })}::jsonb, 
                 ${isFeaturedTop}
             )
@@ -78,7 +78,7 @@ export async function POST(request: Request) {
         sendAdminNotification({
             title: data.title,
             organizerName: data.organizerName,
-            twitterId: data.twitterId,
+            snsId: data.snsId,
         }).catch(err => console.error('Email notification background error:', err));
 
         const newEvent = {
