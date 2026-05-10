@@ -8,7 +8,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 export async function sendAdminNotification(eventData: {
     title: string;
     organizerName: string;
-    twitterId: string;
+    snsId: string;
 }) {
     if (!process.env.RESEND_API_KEY) {
         console.warn('RESEND_API_KEY is not set. Skipping email notification.');
@@ -36,7 +36,7 @@ export async function sendAdminNotification(eventData: {
                     
                     <div style="background: #f8fafc; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0;">
                         <p style="margin: 0;"><strong>イベント名:</strong> ${eventData.title}</p>
-                        <p style="margin: 10px 0 0 0;"><strong>主催者:</strong> ${eventData.organizerName} (@${eventData.twitterId})</p>
+                        <p style="margin: 10px 0 0 0;"><strong>主催者:</strong> ${eventData.organizerName} (@${eventData.snsId})</p>
                         <p style="margin: 10px 0 0 0;"><strong>申請日時:</strong> ${new Date().toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' })}</p>
                     </div>
 

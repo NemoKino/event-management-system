@@ -8,17 +8,17 @@
     "tags": [
       "Bar",
       "RP",
-      "初心者歓迎"
+      "初忁E��E��迁E
     ],
-    "description": "落ち着いた雰囲気のBarロールプレイイベント。接客スタッフを募集中です。",
+    "description": "落ち着ぁE��雰囲気�EBarロールプレイイベント。接客スタチE��を募雁E��です、E,
     "detail": {
       "heroImage": "/uploads/1768841430694_2026-01-10_211803.png",
-      "longDescription": "Bar Moonlightは、Virtual World内で毎週金曜日に開催しているBarイベントです。\nジャズの流れる落ち着いた空間で、お客様に癒やしを提供しています。\n現在、カウンターで接客を行ってくれるキャストを2名募集しています。\n\nお酒の知識は不要です。お話を聞くのが好きな方、RPを楽しみたい方、ぜひ一緒に作り上げましょう。",
+      "longDescription": "Bar Moonlightは、Virtual World冁E��毎週金曜日に開催してぁE��Barイベントです、Enジャズの流れる落ち着ぁE��空間で、お客様に癒やしを提供してぁE��す、En現在、カウンターで接客を行ってくれるキャストを2名募雁E��てぁE��す、En\nお�Eの知識�E不要です。お話を聞く�Eが好きな方、RPを楽しみたい方、ぜひ一緒に作り上げましょぁE��E,
       "requirements": [
-        "毎週金曜 21:30〜24:00 に参加できる方（シフト相談可）",
-        "Virtual Worldのプレイ時間が50時間以上の方",
+        "毎週金曜 21:30、E4:00 に参加できる方�E�シフト相諁E���E�E,
+        "Virtual Worldのプレイ時間ぁE0時間以上�E方",
         "Discordでの連絡が取れる方",
-        "接客RPに興味がある方（経験不問）"
+        "接客RPに興味がある方�E�経験不問�E�E
       ],
       "schedule": {
         "text": "毎週金曜 22:00",
@@ -38,7 +38,7 @@
     "organizer": {
       "name": "MoonOwner",
       "icon": "/images/organizer-icon.jpg",
-      "twitterUrl": "https://twitter.com/example"
+      "contactUrl": "https://sns-platform.com/example"
     },
     "isFeaturedTop": true
   },
@@ -53,14 +53,14 @@
       "Music",
       "Dancers"
     ],
-    "description": "サイバーパンクな空間で踊れるクラブイベント。ダンサーとセキュリティ募集。",
+    "description": "サイバ�Eパンクな空間で踊れるクラブイベント。ダンサーとセキュリチE��募集、E,
     "detail": {
       "heroImage": "/images/sample-club-hero.jpg",
-      "longDescription": "Club NEONは、最新のEDMとサイバーパンクなワールドで盛り上がるクラブイベントです。\nフロアを盛り上げるダンサーと、イベントの進行を守るセキュリティスタッフを募集しています。",
+      "longDescription": "Club NEONは、最新のEDMとサイバ�Eパンクなワールドで盛り上がるクラブイベントです、Enフロアを盛り上げるダンサーと、イベント�E進行を守るセキュリチE��スタチE��を募雁E��てぁE��す、E,
       "requirements": [
         "隔週土曜に参加可能な方",
-        "フルトラッキング環境（ダンサーのみ）",
-        "イベントの雰囲気を大切にできる方"
+        "フルトラチE��ング環墁E��ダンサーのみ�E�E,
+        "イベント�E雰囲気を大刁E��できる方"
       ],
       "schedule": {
         "text": "隔週土曜日 21:00 - 25:00",
@@ -79,7 +79,7 @@
     "organizer": {
       "name": "DJ_Neon",
       "icon": "/images/organizer-icon-2.jpg",
-      "twitterUrl": "https://twitter.com/example_club"
+      "contactUrl": "https://sns-platform.com/example_club"
     },
     "isFeaturedTop": true
   },
@@ -102,18 +102,18 @@
         "type": "weekly"
       },
       "galleryImages": [],
-      "location": "https://x.com/tmt_massage"
+      "location": "https://sns-platform.com/tmt_massage"
     },
     "organizer": {
-      "name": "根本希乃",
+      "name": "根本希乁E,
       "icon": "/images/organizer-icon.jpg",
-      "twitterUrl": "https://x.com/tmt_massage"
+      "contactUrl": "https://sns-platform.com/tmt_massage"
     },
     "isFeaturedTop": false
   },
   {
     "id": "event-1768831214853",
-    "title": "更新テスト",
+    "title": "更新チE��チE,
     "thumbnail": "/images/sample-bar.jpg",
     "frequency": "毎週金曜 22:00",
     "status": "recruiting",
@@ -141,31 +141,31 @@
     "organizer": {
       "name": "Agent",
       "icon": "/images/organizer-icon.jpg",
-      "twitterUrl": "https://twitter.com/"
+      "contactUrl": "https://sns-platform.com/"
     },
     "isFeaturedTop": false
   },
   {
     "id": "event-1768841889759",
-    "title": "作成TEST",
+    "title": "作�ETEST",
     "thumbnail": "/uploads/1768841778172_Virtual World_2026-01-11_21-36-23.557_1920x1080.png",
-    "frequency": "毎日　2：00",
+    "frequency": "毎日　2�E�E0",
     "status": "recruiting",
     "tags": [
       "Virtual World",
       "PR",
       "book",
-      "集会"
+      "雁E��E
     ],
-    "description": "これはTESTです。",
+    "description": "これはTESTです、E,
     "detail": {
       "heroImage": "/uploads/1768841749048_maruma-ku-illust14.png",
       "longDescription": "123",
       "requirements": [
-        "特になし"
+        "特になぁE
       ],
       "schedule": {
-        "text": "毎日　2：00",
+        "text": "毎日　2�E�E0",
         "type": "daily",
         "days": []
       },
@@ -173,9 +173,9 @@
       "location": "グルプラ"
     },
     "organizer": {
-      "name": "俺！",
+      "name": "俺�E�E,
       "icon": "/images/organizer-icon.jpg",
-      "twitterUrl": "https://twitter.com/"
+      "contactUrl": "https://sns-platform.com/"
     },
     "isFeaturedTop": false
   }

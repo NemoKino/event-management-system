@@ -12,20 +12,20 @@ interface EventDetailViewProps {
 }
 
 export default function EventDetailView({ event, isPreview = false }: EventDetailViewProps) {
-    const getTwitterId = (url: string) => {
+    const getSnsId = (url: string) => {
         if (!url) return null;
-        const match = url.match(/(?:twitter\.com|x\.com)\/([^/?]+)/);
+        const match = url.match(/(?:twitter\.com|x\.com|misskey\.io|bsky\.app)\/([^/?]+)/);
         return match ? match[1] : null;
     };
 
     // Sanitize URL once
-    const twitterUrl = event.organizer.twitterUrl ? event.organizer.twitterUrl.trim() : '';
-    const twitterId = getTwitterId(twitterUrl);
+    const contactUrl = event.organizer.contactUrl ? event.organizer.contactUrl.trim() : '';
+    const snsId = getSnsId(contactUrl);
     const isDefaultIcon = event.organizer.icon === '/images/organizer-icon.jpg';
 
-    // Use unavatar if we have a Twitter ID and the current icon is the default placeholder
-    const displayIcon = (twitterId && isDefaultIcon)
-        ? `https://unavatar.io/twitter/${twitterId}`
+    // Use unavatar if we have an SNS ID and the current icon is the default placeholder
+    const displayIcon = (snsId && isDefaultIcon)
+        ? `https://unavatar.io/x/${snsId}`
         : event.organizer.icon;
 
     return (
@@ -109,14 +109,14 @@ export default function EventDetailView({ event, isPreview = false }: EventDetai
                             )}
                             <div>
                                 <div className={styles.organizerName}>{event.organizer.name}</div>
-                                {twitterUrl && (
+                                {contactUrl && (
                                     <a
-                                        href={twitterUrl}
+                                        href={contactUrl}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className={styles.twitterLink}
                                     >
-                                        @{twitterUrl.split('/').pop()}
+                                        @{contactUrl.split('/').pop()}
                                     </a>
                                 )}
                             </div>
@@ -130,16 +130,16 @@ export default function EventDetailView({ event, isPreview = false }: EventDetai
                     <div className={styles.stickyCard}>
                         <h3 className={styles.ctaTitle}>キャストに応募する</h3>
                         <p className={styles.ctaDesc}>
-                            応募・お問い合わせは主催者のTwitter（DM）へご連絡ください。
+                            応募・お問い合わせは主催者の連絡先（SNS等）へご連絡ください。
                         </p>
                         <Button
-                            href={twitterUrl || '#'}
+                            href={contactUrl || '#'}
                             external
                             size="lg"
                             className={styles.ctaButton}
-                            disabled={!twitterUrl}
+                            disabled={!contactUrl}
                         >
-                            X (Twitter) で連絡する
+                            主催者に連絡する
                         </Button>
                     </div>
                 </aside>
@@ -148,13 +148,13 @@ export default function EventDetailView({ event, isPreview = false }: EventDetai
             {/* Mobile Sticky CTA */}
             <div className={styles.mobileCta}>
                 <Button
-                    href={twitterUrl || '#'}
+                    href={contactUrl || '#'}
                     external
                     size="md"
                     className={styles.ctaButton}
-                    disabled={!twitterUrl}
+                    disabled={!contactUrl}
                 >
-                    X (Twitter) で連絡する
+                    主催者に連絡する
                 </Button>
             </div>
         </div>

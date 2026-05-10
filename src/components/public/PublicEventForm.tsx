@@ -29,7 +29,7 @@ interface FormData {
     scheduleDate: number | null;
     scheduleDateString: string; // for oneoff (YYYY-MM-DD)
     organizerName: string;
-    twitterId: string;
+    snsId: string;
     galleryImages: string[];
     requirementsText: string;
     listingPeriod: string;
@@ -156,7 +156,7 @@ export default function PublicEventForm({ onSubmit }: PublicEventFormProps) {
         scheduleDateString: '',
 
         organizerName: '',
-        twitterId: '',
+        snsId: '',
         galleryImages: [''], // Initialize with one empty slot
         requirementsText: '',
         listingPeriod: 'indefinite',
@@ -190,8 +190,8 @@ export default function PublicEventForm({ onSubmit }: PublicEventFormProps) {
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
         
-        // Stricter validation for twitterId to prevent full-width etc.
-        if (name === 'twitterId') {
+        // Stricter validation for snsId to prevent full-width etc.
+        if (name === 'snsId') {
             const filteredValue = value.replace(/[^a-zA-Z0-9_@]/g, '');
             setFormData(prev => ({ ...prev, [name]: filteredValue }));
             return;
@@ -352,7 +352,7 @@ export default function PublicEventForm({ onSubmit }: PublicEventFormProps) {
         if (!formData.longDescription) missingFields.push('詳細説明');
 
         if (!formData.organizerName) missingFields.push('主催者名');
-        if (!formData.twitterId) missingFields.push('Twitter ID');
+        if (!formData.snsId) missingFields.push('SNS ID / 連絡先');
         if (!formData.thumbnail) missingFields.push('サムネイル画像');
         if (!formData.heroImage) missingFields.push('メイン画像');
 
@@ -414,9 +414,9 @@ export default function PublicEventForm({ onSubmit }: PublicEventFormProps) {
             .map(s => s.trim())
             .filter(s => s.length > 0);
 
-        // Construct Twitter URL from ID
-        const twitterIdClean = formData.twitterId.replace(/^@/, '');
-        const twitterUrl = `https://x.com/${twitterIdClean}`;
+        // Construct Contact URL from ID
+        const snsIdClean = formData.snsId.replace(/^@/, '');
+        const contactUrl = `https://x.com/${snsIdClean}`;
 
         // Calculate listingEndDate based on period if not custom
         let computedListingEndDate = formData.listingEndDate;
@@ -468,7 +468,7 @@ export default function PublicEventForm({ onSubmit }: PublicEventFormProps) {
             listingPeriod: formData.listingPeriod,
             listingEndDate: computedListingEndDate,
             organizerName: formData.organizerName,
-            twitterId: formData.twitterId,
+            snsId: formData.snsId,
         };
 
         try {
@@ -509,7 +509,7 @@ export default function PublicEventForm({ onSubmit }: PublicEventFormProps) {
         organizer: {
             name: formData.organizerName || '主催者名',
             icon: '/images/organizer-icon.jpg',
-            twitterUrl: formData.twitterId ? `https://x.com/${formData.twitterId.replace(/^@/, '')}` : '#',
+            contactUrl: formData.snsId ? `https://x.com/${formData.snsId.replace(/^@/, '')}` : '#',
         },
         isFeaturedTop: false,
     });
@@ -641,7 +641,7 @@ export default function PublicEventForm({ onSubmit }: PublicEventFormProps) {
                         <p style={{ fontWeight: 'bold', color: '#1e40af', marginBottom: '0.25rem' }}>最終チェック</p>
                         <ul style={{ listStyle: 'disc', paddingLeft: '1.25rem', color: '#334155', fontSize: '0.95rem' }}>
                             <li>イベント名に誤字はありませんか？</li>
-                            <li>X (Twitter) ID は正しいですか？</li>
+                            <li>SNS ID / 連絡先は正しいですか？</li>
                             <li>画像は正しく設定されていますか？</li>
                         </ul>
                     </div>
@@ -818,14 +818,14 @@ export default function PublicEventForm({ onSubmit }: PublicEventFormProps) {
                 </div>
 
                 <div className={styles.formGroup}>
-                    <label className={styles.label}>X (旧Twitter) ID <span className="text-red-500">*</span></label>
+                    <label className={styles.label}>SNS / 連絡先 ID <span className="text-red-500">*</span></label>
                     <p style={{ fontSize: '0.85rem', color: '#475569', marginBottom: '0.5rem' }}>
-                        応募の連絡先として使用されます。管理者またはイベント公式アカウントのIDを入力してください。
+                        応募の連絡先（SNS等）のユーザーIDを入力してください。
                     </p>
-                    <input name="twitterId" required className={styles.input} value={formData.twitterId} onChange={handleChange} placeholder="admin" />
+                    <input name="snsId" required className={styles.input} value={formData.snsId} onChange={handleChange} placeholder="admin" />
                     <p style={{ fontSize: '0.8rem', color: '#64748b', marginTop: '0.25rem' }}>
                         ※ @から始まるIDを入力してください。<br />
-                        ※ 申請後の合否通知も、こちらのアカウントへDMにてお送りします。
+                        ※ 承認後のご連絡も、こちらの連絡先を優先的に使用します。
                     </p>
                 </div>
 

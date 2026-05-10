@@ -34,6 +34,11 @@ export const metadata: Metadata = {
     description: 'A platform for discovering and recruiting staff for virtual reality events.',
     images: ['/images/sample-club-hero.jpg'],
   },
+  icons: {
+    icon: '/icon.png',
+    shortcut: '/favicon.ico',
+    apple: '/icon.png',
+  },
 };
 
 export default function RootLayout({
