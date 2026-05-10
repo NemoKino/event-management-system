@@ -99,7 +99,7 @@ export default async function EventDetailPage(props: Props) {
                         organizer: {
                             '@type': 'Person',
                             name: event.organizer.name,
-                            url: event.organizer.twitterUrl,
+                            url: event.organizer.contactUrl || event.organizer.twitterUrl || '',
                         },
                         offers: {
                             '@type': 'Offer',

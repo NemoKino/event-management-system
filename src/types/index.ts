@@ -24,7 +24,8 @@ export interface EventDetail {
 export interface Organizer {
     name: string;
     icon: string;
-    contactUrl: string;
+    contactUrl?: string;
+    twitterUrl?: string;
 }
 
 export interface Event {

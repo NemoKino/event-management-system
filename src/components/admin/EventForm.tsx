@@ -126,7 +126,7 @@ export default function EventForm({ initialData, onSubmit, isEditing = false }: 
                 scheduleDays: (initialData.detail.schedule.days as string[]) || [],
                 location: initialData.detail.location || '',
                 organizerName: initialData.organizer.name,
-                contactUrl: initialData.organizer.contactUrl,
+                contactUrl: initialData.organizer.contactUrl || initialData.organizer.twitterUrl || '',
                 galleryImages: initialData.detail.galleryImages || [], // Load as array
                 requirementsText: initialData.detail.requirements ? initialData.detail.requirements.join('\n') : '',
                 listingPeriod: initialData.detail.listingPeriod || '1month',

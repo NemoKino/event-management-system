@@ -19,7 +19,8 @@ export default function EventDetailView({ event, isPreview = false }: EventDetai
     };
 
     // Sanitize URL once
-    const contactUrl = event.organizer.contactUrl ? event.organizer.contactUrl.trim() : '';
+    const rawContactUrl = event.organizer.contactUrl || event.organizer.twitterUrl || '';
+    const contactUrl = rawContactUrl.trim();
     const snsId = getSnsId(contactUrl);
     const isDefaultIcon = event.organizer.icon === '/images/organizer-icon.jpg';
 
